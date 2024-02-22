@@ -37,7 +37,9 @@ jobs:
 
       - name: test1
         env:
-          GITHUB_TOKEN: "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"
+          GITHUB_TOKEN: "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"
+
+        
         run: |
               prs=$(gh pr list)
               echo "idanm=3" >> $GITHUB_OUTPUT

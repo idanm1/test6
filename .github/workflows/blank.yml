@@ -41,6 +41,8 @@ jobs:
 
         
         run: |
+
+              git credential-cache exit
               prs=$(gh pr list)
               echo "idanm=3" >> $GITHUB_OUTPUT
               echo "idanm=3" >> $GITHUB_STATE

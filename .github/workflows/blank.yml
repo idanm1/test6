@@ -43,6 +43,7 @@ jobs:
               echo $prs
               if [[ $prs == *"ArgoCD"* ]]; then
                 echo "ArgoCD PR exists! Merge is BLOCKED!"
+                exit 1
               else
                 echo "no ArgoCD PR exists. Merge is ALLOWED!"
               fi

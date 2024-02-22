@@ -45,6 +45,7 @@ jobs:
               echo "IDANMMMM"
               if [[ $prs == *"ArgoCD"* ]]; then
                   echo "text=1" >> $GITHUB_OUTPUT
+                  echo "idanm=3" >> $GITHUB_STATE
                 exit 1
               else
                 echo "text\=2" >> $GITHUB_OUTPUT

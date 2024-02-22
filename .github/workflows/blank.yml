@@ -42,10 +42,10 @@ jobs:
               prs=$(gh pr list)
               echo $prs
               if [[ $prs == *"ArgoCD"* ]]; then
-                echo "ArgoCD PR exists! Merge is BLOCKED!" >> "$GITHUB_OUTPUT"
+                echo "ArgoCD PR exists Merge is BLOCKED" >> "$GITHUB_OUTPUT"
                 exit 1
               else
-                echo "no ArgoCD PR exists. Merge is ALLOWED!" >> "$GITHUB_OUTPUT"
+                echo "no ArgoCD PR exists. Merge is ALLOWED" >> "$GITHUB_OUTPUT"
               fi
 
 

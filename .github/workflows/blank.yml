@@ -43,13 +43,11 @@ jobs:
               echo $prs
               
               if [[ $prs == *"ArgoCD"* ]]; then
-                echo "Substring '$substring' found in variable."
+                echo "Substring '$substring' found in variable." >> "$GITHUB_OUTPUT"
                 echo "skip=true" >> "$GITHUB_OUTPUT"
                 echo "ArgoCD PR exists! Merge is BLOCKED!" >> "$GITHUB_OUTPUT"
               else
-                echo "skip=true" >> "$GITHUB_OUTPUT"
                 echo "no ArgoCD PR exists. Merge is ALLOWED!" >> "$GITHUB_OUTPUT"
-                echo "no ArgoCD PR exists. Merge is ALLOWED!"
               fi
 
 

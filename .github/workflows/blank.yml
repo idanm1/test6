@@ -41,6 +41,7 @@ jobs:
         run: |
               prs=$(gh pr list)
               echo "idanm=3" >> $GITHUB_OUTPUT
+              echo "IDANMMMM"
               if [[ $prs == *"ArgoCD"* ]]; then
                   echo "text=1" >> $GITHUB_OUTPUT
                 exit 1

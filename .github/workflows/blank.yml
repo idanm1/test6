@@ -34,3 +34,32 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+  check_pr_exists:
+      runs-on: ubuntu-latest
+
+      steps:
+          - uses: actions/checkout@v3
+          
+          - name: Check if PR exists
+            id: check
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            run: |
+              prs=$(gh pr list \
+              --repo "$GITHUB_REPOSITORY" \
+              --head 'dev' \
+              --base 'master' \
+              --json title \
+              --jq 'length')
+              if ((prs > 0)); then
+                echo "skip=true" >> "$GITHUB_OUTPUT"
+              fi
+
+          - name: Create pull request
+            if: '!steps.check.outputs.skip'
+
+  
+      
+
+    

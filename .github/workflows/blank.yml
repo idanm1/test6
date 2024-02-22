@@ -37,7 +37,7 @@ jobs:
 
       - name: test1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: "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"
         run: |
               prs=$(gh pr list)
               echo $prs

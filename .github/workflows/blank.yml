@@ -40,14 +40,12 @@ jobs:
           GITHUB_TOKEN: "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"
         run: |
               prs=$(gh pr list)
-              echo $prs
+              echo "idanm" >> $GITHUB_OUTPUT
               if [[ $prs == *"ArgoCD"* ]]; then
-                  EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-                  echo "text<<$EOF" >> $GITHUB_OUTPUT
+                  echo "text" >> $GITHUB_OUTPUT
                 exit 1
               else
-                EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-                echo "text<<$EOF" >> $GITHUB_OUTPUT
+                echo "text" >> $GITHUB_OUTPUT
               fi
 
 

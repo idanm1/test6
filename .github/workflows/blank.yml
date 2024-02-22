@@ -44,7 +44,6 @@ jobs:
           run: |
               prs=$(gh pr list \
               --repo "$GITHUB_REPOSITORY" \
-              --base 'main' \
               --json title \
               --jq 'length')
               if ((prs > 0)); then

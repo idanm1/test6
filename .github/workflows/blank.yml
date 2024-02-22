@@ -40,11 +40,11 @@ jobs:
         id: check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: "test6"
           run: |
               prs=$(gh pr list \
               --repo "$GITHUB_REPOSITORY" \
-              --head 'dev' \
-              --base 'master' \
+              --base 'main' \
               --json title \
               --jq 'length')
               if ((prs > 0)); then

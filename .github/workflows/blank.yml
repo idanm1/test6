@@ -35,7 +35,11 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
+      - name: test1
 
+        run: |
+              prs=$(gh pr list)
+              echo $prs
     
 
   

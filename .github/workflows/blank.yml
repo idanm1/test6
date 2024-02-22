@@ -35,23 +35,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-  
-      - name: Check if PR exists
-        id: check
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: "test6"
-          run: |
-              prs=$(gh pr list \
-              --repo "$GITHUB_REPOSITORY" \
-              --json title \
-              --jq 'length')
-              if ((prs > 0)); then
-                echo "skip=true" >> "$GITHUB_OUTPUT"
-              fi
 
-      - name: Create pull request
-        if: '!steps.check.outputs.skip'
+    
 
   
       

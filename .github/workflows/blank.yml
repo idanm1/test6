@@ -41,8 +41,18 @@ jobs:
         run: |
               prs=$(gh pr list)
               echo $prs
-    
+              
+              if [[ $prs == *"ArgoCD"* ]]; then
+                echo "Substring '$substring' found in variable."
+                echo "skip=true" >> "$GITHUB_OUTPUT"
+                echo "ArgoCD PR exists! Merge is BLOCKED!"
+              else
+                echo "skip=true" >> "$GITHUB_OUTPUT"
+                echo "no ArgoCD PR exists. Merge is ALLOWED!"
+              fi
 
+
+    
   
       
 
